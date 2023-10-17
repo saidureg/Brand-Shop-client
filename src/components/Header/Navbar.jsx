@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo-nav.png";
+import Theme from "../Theme/Theme";
 const Navbar = () => {
   const navLinks = (
     <>
@@ -48,6 +49,9 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
+        <div className="mr-5">
+          <Theme />
+        </div>
         <Link to="/login">
           <button className="btn bg-[#E2DAA7] text-[#404040]">Login</button>
         </Link>
