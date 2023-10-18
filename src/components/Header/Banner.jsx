@@ -1,3 +1,4 @@
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const Banner = () => {
   return (
     <div
@@ -18,7 +19,8 @@ const Banner = () => {
             for Cutting-Edge Electronics.
           </p>
           <button className="btn border-none bg-gradient-to-r from-green-400 to-blue-500 hover:from-violet-500 hover:to-pink-500">
-            Buy Now
+            Buy Now{" "}
+            <AiOutlineShoppingCart className="inline-block ml-1 text-2xl text-white font-bold" />
           </button>
         </div>
       </div>
