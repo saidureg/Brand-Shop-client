@@ -25,7 +25,7 @@ const AddProduct = () => {
     console.log(product);
     form.reset();
 
-    fetch("http://localhost:5000/addProduct", {
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -148,7 +148,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Product types will be mobile, laptop, headphone, etc."
+                  placeholder="Product types will be Smartphone, laptop, headphone, etc."
                   name="type"
                   className="input input-bordered"
                   required
