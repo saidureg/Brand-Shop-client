@@ -1,4 +1,6 @@
+import swal from "sweetalert";
 import Navbar from "../../components/Header/Navbar";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
   const handleAddProduct = (e) => {
@@ -21,8 +23,9 @@ const AddProduct = () => {
       description,
     };
     console.log(product);
+    form.reset();
 
-    fetch("http://localhost:5000/products", {
+    fetch("http://localhost:5000/addProduct", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,11 +35,13 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("Product added successfully");
+        if (data.insertedId) {
+          toast("Your product is added successfully!");
+        }
       })
       .catch((err) => {
         console.log(err);
-        alert("Error occurred while adding product");
+        swal("Oops", "You did something wrong!", "error");
       });
   };
   return (
