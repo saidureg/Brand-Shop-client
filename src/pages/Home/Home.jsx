@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Brands from "../../components/Brands/Brands";
 import Banner from "../../components/Header/Banner";
-import Navbar from "../../components/Header/Navbar";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
@@ -9,9 +8,6 @@ const Home = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto">
-        <Navbar />
-      </div>
       <Banner></Banner>
 
       <div className="max-w-screen-xl mx-auto mb-10">

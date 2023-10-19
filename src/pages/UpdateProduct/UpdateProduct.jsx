@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
-import { toast } from "react-toastify";
 
-const AddProduct = () => {
-  const handleAddProduct = (e) => {
+const UpdateProduct = () => {
+  const product = useLoaderData();
+  const { _id, name, brandName, photo, rating, price, type } = product;
+
+  const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -11,38 +14,38 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const photo = form.photo.value;
     const type = form.type.value;
-    const description = form.description.value;
-    const product = {
+    const updateProduct = {
       name,
       brandName,
       price,
       rating,
       photo,
       type,
-      description,
     };
-    console.log(product);
-    form.reset();
+    console.log(updateProduct);
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
+    fetch(`http://localhost:5000/products/${_id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(product),
+      body: JSON.stringify(updateProduct),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          toast("Your product is added successfully!");
+        form.reset();
+        if (data.modifiedCount) {
+          swal({
+            title: "Good job!",
+            text: "Product is updated successfully!",
+            icon: "success",
+            button: "Great",
+          });
         }
-      })
-      .catch((err) => {
-        console.log(err);
-        swal("Oops", "You did something wrong!", "error");
       });
   };
+
   return (
     <div>
       <div
@@ -55,9 +58,9 @@ const AddProduct = () => {
         <div className="hero-content lg:w-3/5 mx-auto">
           <div className="card flex-shrink-0 w-full ">
             <h3 className="text-black text-center font-semibold text-3xl">
-              Add Product
+              Update Product
             </h3>
-            <form onSubmit={handleAddProduct} className="card-body">
+            <form onSubmit={handleUpdateProduct} className="card-body">
               {/* name and brand name */}
               <div className="flex flex-col md:flex-row gap-2">
                 <div className="form-control grow">
@@ -70,6 +73,7 @@ const AddProduct = () => {
                     type="text"
                     placeholder="Name"
                     name="name"
+                    defaultValue={name}
                     className="input input-bordered"
                     required
                   />
@@ -84,6 +88,7 @@ const AddProduct = () => {
                     type="text"
                     placeholder="Brand Name"
                     name="brandName"
+                    defaultValue={brandName}
                     className="input input-bordered"
                     required
                   />
@@ -102,6 +107,7 @@ const AddProduct = () => {
                     step="0.01"
                     placeholder="Price"
                     name="price"
+                    defaultValue={price}
                     className="input input-bordered"
                     required
                   />
@@ -117,6 +123,7 @@ const AddProduct = () => {
                     step="0.01"
                     placeholder="Rating"
                     name="rating"
+                    defaultValue={rating}
                     className="input input-bordered"
                     required
                   />
@@ -133,6 +140,7 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Photo URL"
                   name="photo"
+                  defaultValue={photo}
                   className="input input-bordered"
                   required
                 />
@@ -148,27 +156,14 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Product types will be Smartphone, laptop, headphone, etc."
                   name="type"
+                  defaultValue={type}
                   className="input input-bordered"
                   required
                 />
               </div>
-              {/* short description */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-neutral-content">
-                    Description
-                  </span>
-                </label>
-                <textarea
-                  className="textarea textarea-bordered"
-                  placeholder="Write a short description about you product"
-                  name="description"
-                  required
-                ></textarea>
-              </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary text-lg hover:text-xl hover:bg-opacity-90">
-                  Save
+                <button className="btn btn-error text-lg hover:text-xl hover:bg-opacity-90">
+                  Submit
                 </button>
               </div>
             </form>
@@ -179,4 +174,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UpdateProduct;

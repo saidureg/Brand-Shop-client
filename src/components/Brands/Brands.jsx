@@ -4,11 +4,11 @@ const Brands = ({ brand }) => {
   const { brandName, photo } = brand;
   return (
     <Link to={`/brands/${brandName}`}>
-      <div className="flex flex-col justify-center items-center border">
-        <figure className="">
+      <div className="flex flex-col justify-center items-center border hover:scale-100 hover:bg-base-100 hover:translate-y-1 hover:border-none hover:shadow-xl">
+        <figure>
           <img className="w-[100px] p-3" src={photo} alt={brandName} />
         </figure>
-        <div className="">
+        <div>
           <h2 className="my-5">{brandName}</h2>
         </div>
       </div>

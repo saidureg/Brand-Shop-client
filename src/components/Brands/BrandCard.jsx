@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
-import { BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const BrandCard = ({ brand }) => {
   const { _id, name, brandName, photo, rating, price, type } = brand;
   return (
-    <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl text-gray-700 shadow-lg">
-      <div className="relative mx-4 mt-4 overflow-hidden rounded-xl text-white">
-        <img className="w-full" src={photo} alt={name} />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full "></div>
+    <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl text-gray-700 shadow-lg mt-6">
+      <div className="relative overflow-hidden rounded-xl pt-4 px-8">
+        <img className="w-full h-[280px]" src={photo} alt={name} />
       </div>
       <div className="p-6 flex-1">
         <div className="mb-3 flex items-center justify-between">
@@ -31,30 +29,31 @@ const BrandCard = ({ brand }) => {
             {rating}
           </p>
         </div>
-        <p className="block text-base font-light leading-relaxed text-gray-700 antialiased">
-          {brandName}
-        </p>
         <div className="group mt-6 flex justify-between items-center gap-3 text-xl">
-          <p>Starting at : ${price}</p>
-          <span className="flex items-center gap-3">
-            <BsEyeFill></BsEyeFill>
-            {type}
-          </span>
+          <p className="font-light leading-relaxed text-gray-700 antialiased">
+            Model : {brandName}
+          </p>
+          <p className="font-light leading-relaxed text-gray-700 antialiased">
+            Price : ${price}
+          </p>
         </div>
+        <p className="block text-xl font-light leading-relaxed text-gray-700 antialiased mt-3">
+          Categories: {type}
+        </p>
       </div>
-      <div className="p-6 pt-3">
-        <Link to={`/product/${_id}`}>
+      <div className="p-6 pt-3 flex items-center justify-between">
+        <Link to={`/productDetails/${_id}`}>
           <button
-            className="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle text-lg font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className=" select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle text-lg font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-light="true"
           >
-            See Details
+            Details
           </button>
         </Link>
-        <Link to={`/product/${_id}`}>
+        <Link to={`/updateProduct/${_id}`}>
           <button
-            className="block w-full mt-4 select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle text-lg font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className=" select-none rounded-lg bg-gray-500 py-3.5 px-7 text-center align-middle text-lg font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-light="true"
           >
