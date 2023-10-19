@@ -53,7 +53,9 @@ const Navbar = () => {
           <Theme />
         </div>
         <Link to="/login">
-          <button className="btn bg-[#E2DAA7] text-[#404040]">Login</button>
+          <button className="btn bg-[#404040] text-white hover:text-[#404040]">
+            Login
+          </button>
         </Link>
       </div>
     </div>

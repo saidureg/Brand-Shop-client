@@ -21,7 +21,6 @@ const AddProduct = () => {
       type,
       description,
     };
-    console.log(product);
     form.reset();
 
     fetch("http://localhost:5000/products", {
@@ -33,13 +32,11 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           toast("Your product is added successfully!");
         }
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
         swal("Oops", "You did something wrong!", "error");
       });
   };

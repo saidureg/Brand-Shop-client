@@ -22,7 +22,6 @@ const UpdateProduct = () => {
       photo,
       type,
     };
-    console.log(updateProduct);
 
     fetch(`http://localhost:5000/products/${_id}`, {
       method: "PUT",
@@ -33,7 +32,6 @@ const UpdateProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         form.reset();
         if (data.modifiedCount) {
           swal({
