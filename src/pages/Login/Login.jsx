@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import loginImg from "../../assets/secure_login.png";
-import { BsGoogle } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 import swal from "sweetalert";
 import { AuthContext } from "../../provider/AuthProvide";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -34,8 +34,9 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     googleLogin(googleProvide)
-      .then(() => {
+      .then((result) => {
         toast("You have successfully logged in");
+        console.log(result.user);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -86,7 +87,7 @@ const Login = () => {
                   onClick={handleGoogleSignIn}
                   className=" hover:text-xl ml-2 hover:opacity-70 btn flex items-center gap-2"
                 >
-                  <BsGoogle /> Google
+                  <FcGoogle className="text-lg" /> Google
                 </span>
               </p>
             </div>

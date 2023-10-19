@@ -1,7 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo-nav.png";
 import Theme from "../Theme/Theme";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvide";
+import swal from "sweetalert";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        return swal(
+          "Thanks for visiting the site",
+          "Sign-out successful",
+          "warning"
+        );
+      })
+      .catch((error) => {
+        return swal("Oops!", error.message, "error");
+      });
+  };
   const navLinks = (
     <>
       <li>
@@ -48,15 +65,52 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
+
       <div className="navbar-end">
-        <div className="mr-2 md:mr-5">
+        <div className="mr-2 md:mr-5 hidden md:flex">
           <Theme />
         </div>
-        <Link to="/login">
-          <button className="btn bg-[#404040] text-white hover:text-[#404040]">
-            Login
-          </button>
-        </Link>
+
+        {user ? (
+          <>
+            <div className="dropdown dropdown-end md:mr-5">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-8 md:w-10 rounded-full">
+                  <img className="" src={user?.photoURL} />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-44"
+              >
+                <li>
+                  <a>{user?.displayName}</a>
+                </li>
+                <li>
+                  <a className="justify-between">Settings</a>
+                </li>
+                <div className="flex md:hidden justify-evenly items-center text-xs">
+                  <p>Change theme</p>
+                  <span>
+                    <Theme />
+                  </span>
+                </div>
+              </ul>
+            </div>
+            <button
+              onClick={handleLogOut}
+              className="btn hover:text-[#7B014C] bg-[#7B014C] text-[#F1EAEA]"
+            >
+              Log Out
+            </button>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="btn hover:text-[#7B014C] bg-[#7B014C] text-[#F1EAEA]">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
