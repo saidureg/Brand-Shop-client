@@ -4,6 +4,8 @@ import Theme from "../Theme/Theme";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvide";
 import swal from "sweetalert";
+import { AiOutlineSetting, AiOutlineHome } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
@@ -81,13 +83,23 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-44"
+                className="mt-3 z-[1] p-1 divide-y-2 space-y-4 md:p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-48 md:w-52 lg:w-56"
               >
                 <li>
-                  <a>{user?.displayName}</a>
+                  <a className="gap-3 text-sm md:text-base lg:text-lg">
+                    <CgProfile />
+                    {user?.displayName}
+                  </a>
                 </li>
                 <li>
-                  <a className="justify-between">Settings</a>
+                  <a className="gap-3 text-base md:text-lg lg:text-xl">
+                    <AiOutlineHome /> Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a className="gap-3 text-base md:text-lg lg:text-xl">
+                    <AiOutlineSetting /> Settings
+                  </a>
                 </li>
                 <div className="flex md:hidden justify-evenly items-center text-xs">
                   <p>Change theme</p>

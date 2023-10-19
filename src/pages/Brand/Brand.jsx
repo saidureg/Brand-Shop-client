@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import BrandCard from "../../components/Brands/BrandCard";
 import Navbar from "../../components/Header/Navbar";
-import Footer from "../../components/Footer/Footer";
 
 const Brand = () => {
   const brands = useLoaderData();
@@ -19,7 +18,6 @@ const Brand = () => {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

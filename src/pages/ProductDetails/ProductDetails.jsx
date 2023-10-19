@@ -12,7 +12,6 @@ const ProductDetails = () => {
   const { name, brandName, photo, rating, price, type, description } = product;
 
   const handleAddCart = () => {
-    console.log("button clicked");
     fetch("http://localhost:5000/carts", {
       method: "POST",
       headers: {
@@ -25,7 +24,7 @@ const ProductDetails = () => {
         if (data.insertedId) {
           swal({
             title: "Good job!",
-            text: "Product is added to cart successfully!",
+            text: "Item added to your cart!",
             icon: "success",
             button: "Great",
           });
