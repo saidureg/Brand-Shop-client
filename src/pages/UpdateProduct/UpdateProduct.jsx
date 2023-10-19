@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
+import Navbar from "../../components/Header/Navbar";
 
 const UpdateProduct = () => {
   const product = useLoaderData();
@@ -46,6 +47,9 @@ const UpdateProduct = () => {
 
   return (
     <div>
+      <div className="max-w-screen-xl mx-auto">
+        <Navbar />
+      </div>
       <div
         className="hero min-h-screen"
         style={{

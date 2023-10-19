@@ -1,13 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import Brands from "../../components/Brands/Brands";
 import Banner from "../../components/Header/Banner";
-import Footer from "../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Header/Navbar";
 
 const Home = () => {
   const brands = useLoaderData();
 
   return (
     <div>
+      <div className="max-w-screen-xl mx-auto">
+        <Navbar />
+      </div>
       <Banner></Banner>
 
       <div className="max-w-screen-xl mx-auto mb-10">

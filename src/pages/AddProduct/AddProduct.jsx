@@ -1,5 +1,6 @@
 import swal from "sweetalert";
 import { toast } from "react-toastify";
+import Navbar from "../../components/Header/Navbar";
 
 const AddProduct = () => {
   const handleAddProduct = (e) => {
@@ -42,6 +43,9 @@ const AddProduct = () => {
   };
   return (
     <div>
+      <div className="max-w-screen-xl mx-auto">
+        <Navbar />
+      </div>
       <div
         className="hero min-h-screen"
         style={{
