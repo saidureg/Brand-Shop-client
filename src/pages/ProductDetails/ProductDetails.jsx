@@ -1,16 +1,37 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Navbar from "../../components/Header/Navbar";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { GoGitCompare } from "react-icons/go";
 import { BiShoppingBag } from "react-icons/bi";
 import { useState } from "react";
+import swal from "sweetalert";
 
 const ProductDetails = () => {
-  const { id } = useParams();
-  const products = useLoaderData();
+  const product = useLoaderData();
   const [count, setCount] = useState(1);
-  const { _id, name, brandName, photo, rating, price, type, description } =
-    products;
+  const { name, brandName, photo, rating, price, type, description } = product;
+
+  const handleAddCart = () => {
+    console.log("button clicked");
+    fetch("http://localhost:5000/carts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          swal({
+            title: "Good job!",
+            text: "Product is added to cart successfully!",
+            icon: "success",
+            button: "Great",
+          });
+        }
+      });
+  };
 
   return (
     <div className="max-w-screen-xl mx-auto">
@@ -57,7 +78,7 @@ const ProductDetails = () => {
                   type="radio"
                   name="rating-7"
                   className="mask mask-star-2 bg-orange-400"
-                  checked
+                  readOnly
                 />
                 <input
                   type="radio"
@@ -109,7 +130,7 @@ const ProductDetails = () => {
                   : "Not Available"}
               </span>
             </p>
-            <p className="text-xl mt-2 text-gray-400 flex gap-24 items-center ">
+            <div className="text-xl mt-2 text-gray-400 flex gap-24 items-center ">
               Quantity
               <div className="flex gap-5 items-center">
                 {count >= 1 && (
@@ -122,7 +143,7 @@ const ProductDetails = () => {
                   +
                 </button>
               </div>
-            </p>
+            </div>
             <p className="text-xl p-3 mt-8 text-gray-700 flex gap-20">
               Total Price
               <span className="text-[#ff881e] font-bold">
@@ -132,7 +153,10 @@ const ProductDetails = () => {
           </div>
 
           <div className="rounded p-3 my-4 space-y-3 text-center">
-            <button className="btn bg-[#ff881e] text-white hover:text-[rgb(47,48,47)] mr-3">
+            <button
+              onClick={handleAddCart}
+              className="btn bg-[#ff881e] text-white hover:text-[rgb(47,48,47)] mr-3"
+            >
               <BiShoppingBag className="text-xl" /> Add to cart
             </button>
             <button className="btn bg-[#e62e04] text-white hover:text-[rgb(47,48,47)]">
