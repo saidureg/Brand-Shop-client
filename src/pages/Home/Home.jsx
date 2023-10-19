@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer";
 
 const Home = () => {
   const brands = useLoaderData();
-  console.log(brands);
 
   return (
     <div>
@@ -20,7 +19,7 @@ const Home = () => {
           All Brands
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mx-3 lg:mx-0">
           {brands.map((brand) => (
             <Brands key={brand._id} brand={brand}></Brands>
           ))}
