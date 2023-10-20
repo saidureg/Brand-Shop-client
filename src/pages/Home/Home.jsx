@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import Brands from "../../components/Brands/Brands";
 import Banner from "../../components/Header/Banner";
 import Navbar from "../../components/Header/Navbar";
+import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
+import Testimonials from "../../components/Testimonials/Testimonials";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -28,61 +30,21 @@ const Home = () => {
         <h3 className="text-[#E2DAA7] text-center text-5xl my-10">
           Featured Products
         </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mx-3 lg:mx-0">
-          <div className="card bg-base-100 shadow-xl mx-6 md:mr-3 lg:mx-0">
-            <figure className="px-6 pt-5">
-              <img
-                src="https://i.ibb.co/R2LVsMF/i-Phone-14-Pro.png"
-                alt="i-Phone-14-Pro"
-                className="rounded-xl w-4/6 h-[250px]"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">iPhone 14 Pro Max</h2>
-              <p className="text-gray-500 font-bold text-lg">$ 799.00</p>
-            </div>
-          </div>
-          <div className="card bg-base-100 shadow-xl mx-6 md:mr-3 lg:mx-0">
-            <figure className="px-6 pt-5">
-              <img
-                src="https://i.ibb.co/6sktBfP/One-Plus-10-Pro.png"
-                alt="i-Phone-14-Pro"
-                className="rounded-xl w-4/6 h-[250px]"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">OnePlus 10 Pro</h2>
-              <p className="text-gray-500 font-bold text-lg">$ 799.00</p>
-            </div>
-          </div>
-          <div className="card bg-base-100 shadow-xl mx-6 md:mr-3 lg:mx-0">
-            <figure className="px-6 pt-5">
-              <img
-                src="https://i.ibb.co/CW9ZVP5/Vivo-X60-Pro.png"
-                alt="i-Phone-14-Pro"
-                className="rounded-xl w-4/6 h-[250px]"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">Vivo X60 Pro+</h2>
-              <p className="text-gray-500 font-bold text-lg">$ 399.00</p>
-            </div>
-          </div>
-          <div className="card bg-base-100 shadow-xl mx-6 md:mr-3 lg:mx-0">
-            <figure className="px-6 pt-5">
-              <img
-                src="https://i.ibb.co/7GfxKgg/Dell-XPS-13.png"
-                alt="i-Phone-14-Pro"
-                className="rounded-xl w-4/6 h-[250px]"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">Dell XPS 13</h2>
-              <p className="text-gray-500 font-bold text-lg">$ 1299.00</p>
-            </div>
-          </div>
-        </div>
+        <FeaturedProducts />
+      </div>
+      <div className="max-w-screen-xl mx-auto mb-10">
+        <h6 className="text-gray-400 text-center text-sm mt-10">
+          Reviewed by client
+        </h6>
+        <h3 className="text-gray-800 text-center text-lg lg:text-3xl my-5 mx-3 md:mx-0">
+          Discover What Our Clients Say About Us
+        </h3>
+        <p className="text-gray-600 mb-4 text-center w-3/4 mx-auto">
+          Heres what our valued clients have to say about their experiences with
+          us. Their words reflect the dedication and expertise we bring to every
+          project, ensuring your satisfaction and success.
+        </p>
+        <Testimonials />
       </div>
     </div>
   );
