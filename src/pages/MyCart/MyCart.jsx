@@ -2,10 +2,11 @@ import { useLoaderData } from "react-router-dom";
 import Navbar from "../../components/Header/Navbar";
 import Cart from "../../components/Cart/Cart";
 import LeftSideNavbar from "../../components/LeftSideNavbar/LeftSideNavbar";
+import { useState } from "react";
 
 const MyCart = () => {
-  const carts = useLoaderData();
-  console.log(carts);
+  const loadCarts = useLoaderData();
+  const [carts, setCarts] = useState(loadCarts);
 
   return (
     <div>
@@ -19,7 +20,12 @@ const MyCart = () => {
         <div className="md:col-span-2">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {carts.map((cart) => (
-              <Cart key={cart._id} cart={cart}></Cart>
+              <Cart
+                key={cart._id}
+                carts={carts}
+                setCarts={setCarts}
+                cart={cart}
+              ></Cart>
             ))}
           </div>
         </div>
