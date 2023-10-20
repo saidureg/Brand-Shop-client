@@ -20,7 +20,8 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () =>
+          fetch("https://brand-shop-server-beta-eight.vercel.app/brands"),
       },
       {
         path: "/add-product",
@@ -34,7 +35,9 @@ const Router = createBrowserRouter([
         path: "/brands/:brandName",
         element: <Brand />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brands/${params.brandName}`),
+          fetch(
+            `https://brand-shop-server-beta-eight.vercel.app/brands/${params.brandName}`
+          ),
       },
       {
         path: "/productDetails/:id",
@@ -44,7 +47,9 @@ const Router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://brand-shop-server-beta-eight.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/updateProduct/:id",
@@ -54,7 +59,9 @@ const Router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://brand-shop-server-beta-eight.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/my-cart",
@@ -63,7 +70,8 @@ const Router = createBrowserRouter([
             <MyCart />
           </PrivateRouter>
         ),
-        loader: () => fetch("http://localhost:5000/carts"),
+        loader: () =>
+          fetch("https://brand-shop-server-beta-eight.vercel.app/carts"),
       },
       {
         path: "/login",

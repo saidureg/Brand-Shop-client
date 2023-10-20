@@ -13,7 +13,7 @@ const Cart = ({ cart, carts, setCarts }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/carts/${_id}`, {
+        fetch(`https://brand-shop-server-beta-eight.vercel.app/carts/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -39,7 +39,7 @@ const Cart = ({ cart, carts, setCarts }) => {
   return (
     <div className="card bg-base-100 shadow-xl mx-6 md:mr-3 lg:mx-0">
       <figure className="px-6 pt-5">
-        <img src={photo} alt="Shoes" className="rounded-xl w-4/6" />
+        <img src={photo} alt={name} className="rounded-xl w-4/6" />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{name}</h2>

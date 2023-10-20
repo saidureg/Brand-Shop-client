@@ -12,7 +12,7 @@ const ProductDetails = () => {
   const { name, brandName, photo, rating, price, type, description } = product;
 
   const handleAddCart = () => {
-    fetch("http://localhost:5000/carts", {
+    fetch("https://brand-shop-server-beta-eight.vercel.app/carts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
