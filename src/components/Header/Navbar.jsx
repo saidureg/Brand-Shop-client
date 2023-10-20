@@ -13,7 +13,7 @@ const Navbar = () => {
       .then(() => {
         return swal(
           "Thanks for visiting the site",
-          "Sign-out successful",
+          "Log-out successful",
           "warning"
         );
       })

@@ -9,6 +9,7 @@ import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRouter from "./PrivateRouter";
+import MyCart from "../pages/MyCart/MyCart";
 
 const Router = createBrowserRouter([
   {
@@ -54,6 +55,15 @@ const Router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/my-cart",
+        element: (
+          <PrivateRouter>
+            <MyCart />
+          </PrivateRouter>
+        ),
+        loader: () => fetch("http://localhost:5000/carts"),
       },
       {
         path: "/login",
