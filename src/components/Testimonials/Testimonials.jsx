@@ -1,7 +1,7 @@
 const Testimonials = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-3 lg:mx-0">
-      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none border p-3">
+      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-400 shadow-none border p-3">
         <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
           <img
             src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
@@ -10,7 +10,7 @@ const Testimonials = () => {
           />
           <div className="flex w-full flex-col gap-0.5">
             <div className="flex items-center justify-between">
-              <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900">
+              <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-500">
                 Michael Rodriguez
               </h5>
               <div className="flex items-center gap-0 5">
@@ -81,7 +81,7 @@ const Testimonials = () => {
                 </svg>
               </div>
             </div>
-            <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-900">
+            <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-400">
               Tech Innovators Inc.
             </p>
           </div>
@@ -95,7 +95,7 @@ const Testimonials = () => {
           </p>
         </div>
       </div>
-      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none border p-3">
+      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-400 shadow-none border p-3">
         <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
           <img
             src="https://i.ibb.co/zHFMmKS/team-member-1.png"
@@ -104,7 +104,7 @@ const Testimonials = () => {
           />
           <div className="flex w-full flex-col gap-0.5">
             <div className="flex items-center justify-between">
-              <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900">
+              <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-500">
                 Tania Andrew
               </h5>
               <div className="flex items-center gap-0 5">
@@ -175,7 +175,7 @@ const Testimonials = () => {
                 </svg>
               </div>
             </div>
-            <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-900">
+            <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-400">
               White & Co. Design
             </p>
           </div>
@@ -190,7 +190,7 @@ const Testimonials = () => {
           </p>
         </div>
       </div>
-      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none border p-3">
+      <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-400 shadow-none border p-3">
         <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
           <img
             src="https://i.ibb.co/Pw5FDZR/team-member3.png"
@@ -199,7 +199,7 @@ const Testimonials = () => {
           />
           <div className="flex w-full flex-col gap-0.5">
             <div className="flex items-center justify-between">
-              <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900">
+              <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-500">
                 David Lee
               </h5>
               <div className="flex items-center gap-0 5">
@@ -270,7 +270,7 @@ const Testimonials = () => {
                 </svg>
               </div>
             </div>
-            <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-900">
+            <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-400">
               Lee Enterprises
             </p>
           </div>

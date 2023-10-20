@@ -46,14 +46,14 @@ const ProductDetails = () => {
             />
           </div>
           <div className="px-10 py-3 md:px-24 lg:px-5">
-            <p className="mb-8 block text-base font-normal leading-relaxed text-gray-700 antialiased">
+            <p className="mb-8 block text-base font-normal leading-relaxed text-gray-400 antialiased">
               {description}
             </p>
           </div>
         </div>
         <div className="w-3/4 mx-auto lg:w-1/3 lg:mt-20">
           <div className="p-3 space-y-7">
-            <h4 className="mb-2 block text-xl md:text-3xl font-semibold leading-snug tracking-normal text-gray-900 antialiased">
+            <h4 className="mb-2 block text-xl md:text-3xl font-semibold leading-snug tracking-normal text-gray-500 antialiased">
               {name}
             </h4>
             <div className="flex items-center gap-5">
@@ -120,7 +120,7 @@ const ProductDetails = () => {
             </p>
             <p className="text-lg mt-2 text-gray-400 flex gap-24">
               Storage
-              <span className="text-gray-700 font-bold border py-2 px-3 border-[#c1a26c]">
+              <span className="text-gray-500 font-bold border py-2 px-3 border-[#c1a26c]">
                 {type === "Smartphone" ||
                 type === "Laptop" ||
                 type === "Tablet" ||
@@ -129,21 +129,21 @@ const ProductDetails = () => {
                   : "Not Available"}
               </span>
             </p>
-            <div className="text-xl mt-2 text-gray-400 flex gap-24 items-center ">
+            <div className="text-xl mt-2 flex gap-24 items-center ">
               Quantity
-              <div className="flex gap-5 items-center">
+              <div className="flex gap-5 items-center text-gray-400">
                 {count >= 1 && (
                   <button onClick={() => setCount(count - 1)} className="btn">
                     -
                   </button>
                 )}
-                <span className="text-gray-700"> {count}</span>
+                <span className="text-gray-500"> {count}</span>
                 <button onClick={() => setCount(count + 1)} className="btn">
                   +
                 </button>
               </div>
             </div>
-            <p className="text-xl p-3 mt-8 text-gray-700 flex gap-20">
+            <p className="text-xl py-3 mt-8 text-gray-400 flex gap-20">
               Total Price
               <span className="text-[#ff881e] font-bold">
                 $ {price * count}.00

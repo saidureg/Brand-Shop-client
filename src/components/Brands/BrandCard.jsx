@@ -9,10 +9,10 @@ const BrandCard = ({ brand }) => {
       </div>
       <div className="p-6 flex-1">
         <div className="mb-3 flex items-center justify-between">
-          <h5 className="block text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
+          <h5 className="block text-xl font-medium leading-snug tracking-normal text-gray-500 antialiased">
             {name}
           </h5>
-          <p className="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
+          <p className="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-700 antialiased">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -30,14 +30,14 @@ const BrandCard = ({ brand }) => {
           </p>
         </div>
         <div className="group mt-6 flex justify-between items-center gap-3 text-xl">
-          <p className="font-light leading-relaxed text-gray-700 antialiased">
+          <p className="font-light leading-relaxed text-gray-500 antialiased">
             Model : {brandName}
           </p>
-          <p className="font-light leading-relaxed text-gray-700 antialiased">
+          <p className="font-light leading-relaxed text-amber-500 antialiased">
             Price : ${price}
           </p>
         </div>
-        <p className="block text-xl font-light leading-relaxed text-gray-700 antialiased mt-3">
+        <p className="block text-xl font-light leading-relaxed text-gray-400 antialiased mt-3">
           Categories: {type}
         </p>
       </div>

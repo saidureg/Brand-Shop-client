@@ -51,7 +51,7 @@ const Login = () => {
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <img src={loginImg} alt="" />
+            <img className="rounded-lg" src={loginImg} alt="" />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#7B014C]/80">
             <form onSubmit={handleLogin} className="card-body">
