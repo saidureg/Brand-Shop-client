@@ -32,3 +32,12 @@ Welcome to the Brand-Shop(NexGen) project! This web application allows users to 
 ## Live Website
 
 Visit the live website: Brand-Shop(NexGen) (https://brand-shop-62b1f.web.app/)
+
+## Technologies Used
+
+- React.js
+- JavaScript
+- MongoDB
+- Express.js
+- HTML
+- CSS
